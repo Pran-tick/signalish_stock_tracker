@@ -30,5 +30,7 @@ export const connectToDatabase = async () => {
 
     console.log(`Connected to database ${process.env.NODE_ENV} - ${MONGODB_URI}`)
 
+    return cached.conn;
+
 } //This function makes sure our aap connects to the database efficiently without creating multiple new connections due to hot relaod by nextjs server side activities and functions. 
 //nextjs hot reload normally opens or create a new connection on every change and this function stores the function in global cache 
